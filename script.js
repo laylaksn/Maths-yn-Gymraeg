@@ -26,6 +26,8 @@ const termElement = document.getElementById("term");
 const translationInput = document.getElementById("translation");
 const nextButton = document.getElementById("nextBtn");
 const scoreElement = document.getElementById("score");
+const flashcardElement = document.getElementById('flashcard');
+
 
 // Initialize a variable to keep track of the current flashcard index and the score
 let currentCardIndex = 0;
@@ -74,6 +76,11 @@ function handleNextCard() {
 
   // Update the score display
   scoreElement.textContent = "Score: " + score;
+
+  // Remove the 'correct' and 'incorrect' classes after the animation
+  setTimeout(() => {
+    flashcardElement.classList.remove('correct', 'incorrect');
+  }, 300); // Adjust the time to match your animation duration
 
   currentCardIndex++;
 

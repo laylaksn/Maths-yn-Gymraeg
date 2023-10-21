@@ -79,13 +79,28 @@ button:hover {
 }
 
 .flashcard.correct {
-  background-color: #c8e6c9; /* Green background for correct */
-  transform: translateX(-100%);
-  transition: transform 0.3s;
+  background-color: #c8e6c9;
+  animation: rotateAndColor 10s ease-in-out;
 }
 
 .flashcard.incorrect {
-  background-color: #ffcdd2; /* Red background for incorrect */
-  transform: translateX(100%);
-  transition: transform 0.3s;
+  background-color: #ffcdd2;
+  animation: rotateAndColor 10s ease-in-out;
+}
+
+@keyframes rotateAndColor {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(20deg);
+    background-color: #c8e6c9;
+  }
+  80% {
+    transform: rotate(20deg);
+    background-color: #c8e6c9;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
