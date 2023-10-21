@@ -51,21 +51,22 @@ translationInput.addEventListener("keyup", (event) => {
 
 // Function to handle going to the next card
 function handleNextCard() {
-  // Get the expected translation for the current flashcard
-  const expectedTranslations = flashcardData[currentCardIndex].english;
+  // Get the expected translation(s) for the current flashcard
+  let expectedTranslations = flashcardData[currentCardIndex].english;
+
+  //Convert single translations to an array
+  if (!Array.isArray(expectedTranslations)) {
+    expectedTranslations = [expectedTranslations];
+  }
 
   // Check if the entered translation matches any of the expected translations (case-insensitive)
   const enteredTranslation = translationInput.value.toLowerCase();
-  if (
-    expectedTranslations.some(
-      (translation) => enteredTranslation === translation.toLowerCase()
-    )
-  ) {
+  if (expectedTranslations.some(translation => enteredTranslation === translation.toLowerCase())) {
     score++; // Increase the score for a correct translation
   }
 
   // Update the score display
-  scoreElement.textContent = "Score: " + score;
+  scoreElement.textContent = 'Score: ' + score;
 
   currentCardIndex++;
 
