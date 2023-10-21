@@ -1,13 +1,16 @@
 const flashcardData = [
-  { "english": ["Addition", "Add"], "welsh": "Ychwanegu" },
-  { "english": ["Subtraction","Subtract", "Take away","Minus"], "welsh": "Tynnu" },
-  { "english": "Function", "welsh": "Ffwythiant" },
-  { "english": ["Multiply","Times"], "welsh": "LLuosi" },
-  { "english": ["Divide","Shared"], "welsh": "Rhanu" },
-  { "english": ["Vector"], "welsh": "Fector" },
-  { "english": ["Matrix"], "welsh": "Matrics" },
-  { "english": ["Integer"], "welsh": "Cyfanrif" },
-  { "english": ["Derivative"], "welsh": "Deilliad" },
+  { english: ["Addition", "Add"], welsh: "Ychwanegu" },
+  {
+    english: ["Subtraction", "Subtract", "Take away", "Minus"],
+    welsh: "Tynnu",
+  },
+  { english: "Function", welsh: "Ffwythiant" },
+  { english: ["Multiply", "Times"], welsh: "LLuosi" },
+  { english: ["Divide", "Shared"], welsh: "Rhanu" },
+  { english: "Vector", welsh: "Fector" },
+  { english: "Matrix", welsh: "Matrics" },
+  { english: "Integer", welsh: "Cyfanrif" },
+  { english: "Derivative", welsh: "Deilliad" },
   // Add more terms here
 ];
 
@@ -19,10 +22,10 @@ function shuffleFlashcards(array) {
 }
 
 // Get elements from the DOM
-const termElement = document.getElementById('term');
-const translationInput = document.getElementById('translation');
-const nextButton = document.getElementById('nextBtn');
-const scoreElement = document.getElementById('score');
+const termElement = document.getElementById("term");
+const translationInput = document.getElementById("translation");
+const nextButton = document.getElementById("nextBtn");
+const scoreElement = document.getElementById("score");
 
 // Initialize a variable to keep track of the current flashcard index and the score
 let currentCardIndex = 0;
@@ -31,17 +34,17 @@ let score = 0;
 // Function to display the current flashcard
 function showCurrentCard() {
   termElement.textContent = flashcardData[currentCardIndex].welsh;
-  translationInput.value = ''; // Clear the input field for each new flashcard
+  translationInput.value = ""; // Clear the input field for each new flashcard
 }
 
 // Event listener for the "Next Card" button
-nextButton.addEventListener('click', () => {
+nextButton.addEventListener("click", () => {
   handleNextCard();
 });
 
 // Event listener for the Enter key press in the input field
-translationInput.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
+translationInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
     handleNextCard();
   }
 });
@@ -53,12 +56,16 @@ function handleNextCard() {
 
   // Check if the entered translation matches any of the expected translations (case-insensitive)
   const enteredTranslation = translationInput.value.toLowerCase();
-  if (expectedTranslations.some(translation => enteredTranslation === translation.toLowerCase())) {
+  if (
+    expectedTranslations.some(
+      (translation) => enteredTranslation === translation.toLowerCase()
+    )
+  ) {
     score++; // Increase the score for a correct translation
   }
 
   // Update the score display
-  scoreElement.textContent = 'Score: ' + score;
+  scoreElement.textContent = "Score: " + score;
 
   currentCardIndex++;
 
