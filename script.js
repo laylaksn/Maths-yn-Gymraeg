@@ -1,7 +1,9 @@
 const flashcardData = [
-  { "english": "Addition", "welsh": "Ychwanegu" },
-  { "english": "Subtraction", "welsh": "Tynnu" },
+  { "english": ["Addition", "Add"], "welsh": "Ychwanegu" },
+  { "english": ["Subtraction","Subtract", "Take away","Minus"], "welsh": "Tynnu" },
   { "english": "Function", "welsh": "Ffwythiant" },
+  { "english": ["Multiply","Times"], "welsh": "LLuosi" },
+  { "english": ["Divide","Shared"], "welsh": "Rhanu" },
   // Add more terms here
 ];
 
@@ -43,10 +45,11 @@ translationInput.addEventListener('keyup', (event) => {
 // Function to handle going to the next card
 function handleNextCard() {
   // Get the expected translation for the current flashcard
-  const expectedTranslation = flashcardData[currentCardIndex].english;
+  const expectedTranslations = flashcardData[currentCardIndex].english;
 
-  // Check if the entered translation matches the expected translation (case-insensitive)
-  if (translationInput.value.toLowerCase() === expectedTranslation.toLowerCase()) {
+  // Check if the entered translation matches any of the expected translations (case-insensitive)
+  const enteredTranslation = translationInput.value.toLowerCase();
+  if (expectedTranslations.some(translation => enteredTranslation === translation.toLowerCase())) {
     score++; // Increase the score for a correct translation
   }
 

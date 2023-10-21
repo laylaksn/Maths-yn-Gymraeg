@@ -13,9 +13,9 @@ body {
 .container {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 30px;
-  width: 300px;
+  width: 400px;
   text-align: center;
 }
 
@@ -34,7 +34,6 @@ body {
 h3 {
   font-size: 1.5rem;
   margin-top: 10px;
-  color: #e925ab; /* Customize the color as needed */
 }
 
 .flashcard.correct {
@@ -55,7 +54,7 @@ h3 {
 }
 
 input[type="text"] {
-  width: 100%;
+  width:90%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -74,7 +73,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #3f9243;
   color: #fff; /* Change text color on hover */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow on hover */
 }
