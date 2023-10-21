@@ -12,7 +12,7 @@ body {
 
 .container {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 20px 14px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 30px;
   width: 400px;
@@ -22,7 +22,7 @@ body {
 .flashcard {
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 20px;
   font-size: 24px;
   font-weight: bold;
@@ -54,7 +54,7 @@ h3 {
 }
 
 input[type="text"] {
-  width:90%;
+  width: 90%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -69,11 +69,23 @@ button {
   background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 6px
+  border-radius: 6px;
 }
 
 button:hover {
   background-color: #3f9243;
   color: #fff; /* Change text color on hover */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow on hover */
+}
+
+.flashcard.correct {
+  background-color: #c8e6c9; /* Green background for correct */
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.flashcard.incorrect {
+  background-color: #ffcdd2; /* Red background for incorrect */
+  transform: translateX(100%);
+  transition: transform 0.3s;
 }

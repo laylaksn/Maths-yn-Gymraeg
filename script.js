@@ -61,12 +61,19 @@ function handleNextCard() {
 
   // Check if the entered translation matches any of the expected translations (case-insensitive)
   const enteredTranslation = translationInput.value.toLowerCase();
-  if (expectedTranslations.some(translation => enteredTranslation === translation.toLowerCase())) {
+  if (
+    expectedTranslations.some(
+      (translation) => enteredTranslation === translation.toLowerCase()
+    )
+  ) {
     score++; // Increase the score for a correct translation
+    flashcardElement.classList.add("correct"); // Add the 'correct' class for a green flashcard
+  } else {
+    flashcardElement.classList.add("incorrect"); // Add the 'incorrect' class for a red flashcard
   }
 
   // Update the score display
-  scoreElement.textContent = 'Score: ' + score;
+  scoreElement.textContent = "Score: " + score;
 
   currentCardIndex++;
 
