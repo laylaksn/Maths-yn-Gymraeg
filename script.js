@@ -4,6 +4,10 @@ const flashcardData = [
   { "english": "Function", "welsh": "Ffwythiant" },
   { "english": ["Multiply","Times"], "welsh": "LLuosi" },
   { "english": ["Divide","Shared"], "welsh": "Rhanu" },
+  { "english": ["Vector"], "welsh": "Fector" },
+  { "english": ["Matrix"], "welsh": "Matrics" },
+  { "english": ["Integer"], "welsh": "Cyfanrif" },
+  { "english": ["Derivative"], "welsh": "Deilliad" },
   // Add more terms here
 ];
 
